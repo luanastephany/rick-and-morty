@@ -19,5 +19,12 @@
     "sourceType": "module"
   },
   "plugins": ["react", "prettier", "@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }
