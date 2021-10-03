@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+
+  section {
+    padding: 24px 0;
+
+    h2 {
+      font-family: Caveat Brush, sans-serif;
+      font-size: 36px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    width: var(--w-desktop);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  
+}

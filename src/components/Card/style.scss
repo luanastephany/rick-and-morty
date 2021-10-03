@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 8px;
+
+  .thumbnail {
+    height: 200px;
+    width: 100%;
+    background-color: grey;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .name {
+    font-family: Caveat Brush, sans-serif;
+    font-size: 24px;
+  }
+
+  .info {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+}
