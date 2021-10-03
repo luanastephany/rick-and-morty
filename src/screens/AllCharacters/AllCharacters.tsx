@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
 import "./style.scss";
+import Api, { CharacterType } from "../../api";
+import { isTypeElement } from "typescript";
 
-const AllCharacters = () => {
+const AllCharacters = (): JSX.Element => {
+  const [data, setData] = useState<CharacterType[]>([]);
+
+  const loadCharacters = async () => {
+    const characters = await Api.getCharacters();
+    setData(characters);
+  };
+
+  useEffect(() => {
+    loadCharacters();
+  }, []);
+
   return (
     <div className="container">
       <Header />
@@ -11,11 +24,9 @@ const AllCharacters = () => {
         <h2>All Characters</h2>
       </section>
       <div className="grid">
-        {Array(20)
-          .fill(0)
-          .map((_, index) => (
-            <Card key={index} />
-          ))}
+        {data.map((item) => (
+          <Card key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
